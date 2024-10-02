@@ -78,16 +78,14 @@ export const AuthExceptions = {
     );
   },
 
-  UserNotAuthorizedAccess(): any {
+  UserNotAuthorizedAccess(): HttpException {
     return new HttpException(
       {
         message: "Access Denied",
         error: "UnAuthorizedResourceError",
         statusCode: HttpStatus.FORBIDDEN,
       },
-      HttpStatus.FORBIDDEN
+      HttpStatus.FORBIDDEN,
     );
   },
-
- 
 };

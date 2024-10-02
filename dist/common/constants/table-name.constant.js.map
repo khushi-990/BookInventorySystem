@@ -1,1 +1,1 @@
-{"version":3,"file":"table-name.constant.js","sourceRoot":"","sources":["../../../src/common/constants/table-name.constant.ts"],"names":[],"mappings":";;;AACa,QAAA,cAAc,GAAG,QAAQ,CAAC;AAG1B,QAAA,WAAW,GAAG;IACzB,IAAI,EAAE,GAAG,sBAAc,MAAM;IAC7B,IAAI,EAAE,GAAG,sBAAc,MAAM;CAM9B,CAAC"}
+{"version":3,"file":"table-name.constant.js","sourceRoot":"","sources":["../../../src/common/constants/table-name.constant.ts"],"names":[],"mappings":";;;AACa,QAAA,cAAc,GAAG,QAAQ,CAAC;AAG1B,QAAA,WAAW,GAAG;IACzB,IAAI,EAAE,GAAG,sBAAc,MAAM;IAC7B,IAAI,EAAE,GAAG,sBAAc,MAAM;CAG9B,CAAC"}

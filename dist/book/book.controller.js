@@ -58,7 +58,7 @@ __decorate([
 __decorate([
     (0, common_1.Post)("/list"),
     (0, response_decorator_1.ResponseMessage)(response_constant_1.RESPONSE_SUCCESS.BOOK_LISTED),
-    (0, swagger_1.ApiOperation)({ summary: 'Admin can review all Books' }),
+    (0, swagger_1.ApiOperation)({ summary: "Admin can review all Books" }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [common_dto_1.PaginationDto]),
@@ -67,7 +67,7 @@ __decorate([
 __decorate([
     (0, common_1.Post)("/deleteBook"),
     (0, response_decorator_1.ResponseMessage)(response_constant_1.RESPONSE_SUCCESS.BOOK_DELETED),
-    (0, swagger_1.ApiOperation)({ summary: 'Admin can review all Books' }),
+    (0, swagger_1.ApiOperation)({ summary: "Admin can review all Books" }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [common_dto_1.DetailsBasedOnIdDto]),
@@ -76,7 +76,7 @@ __decorate([
 __decorate([
     (0, common_1.Post)("/getDetails"),
     (0, response_decorator_1.ResponseMessage)(response_constant_1.RESPONSE_SUCCESS.BOOK_LISTED),
-    (0, swagger_1.ApiOperation)({ summary: 'Admin can review based on Id Book' }),
+    (0, swagger_1.ApiOperation)({ summary: "Admin can review based on Id Book" }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [common_dto_1.DetailsBasedOnIdDto]),
@@ -92,7 +92,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], BookController.prototype, "update", null);
 exports.BookController = BookController = __decorate([
-    (0, common_1.Controller)('book'),
+    (0, common_1.Controller)("book"),
     (0, roles_decorator_1.Roles)(User_enum_1.UserTypeEnum.Admin),
     (0, swagger_1.ApiTags)("Book Management"),
     (0, swagger_1.ApiBearerAuth)(),

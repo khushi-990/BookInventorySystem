@@ -45,7 +45,12 @@ __decorate([
     __metadata("design:type", Array)
 ], Users.prototype, "progress", void 0);
 __decorate([
-    (0, mongoose_1.Prop)({ required: true, type: Number, enum: User_enum_1.UserTypeEnum, default: User_enum_1.UserTypeEnum.Admin }),
+    (0, mongoose_1.Prop)({
+        required: true,
+        type: Number,
+        enum: User_enum_1.UserTypeEnum,
+        default: User_enum_1.UserTypeEnum.Admin,
+    }),
     __metadata("design:type", Number)
 ], Users.prototype, "userType", void 0);
 __decorate([

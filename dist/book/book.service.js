@@ -59,9 +59,9 @@ let BookService = class BookService {
                 },
             });
         }
-        const sortDir = body.sort_order && body.sort_order.includes('asc') ? 1 : -1;
+        const sortDir = body.sort_order && body.sort_order.includes("asc") ? 1 : -1;
         aggregateQuery.push({
-            $sort: { [body.sort_by ? `${body.sort_by}` : 'createdAt']: sortDir },
+            $sort: { [body.sort_by ? `${body.sort_by}` : "createdAt"]: sortDir },
         });
         aggregateQuery.push({
             $facet: {
@@ -69,9 +69,7 @@ let BookService = class BookService {
                 topicList: [{ $skip: skip }, { $limit: limit }],
             },
         });
-        const BookList = await this.bookModel
-            .aggregate(aggregateQuery)
-            .exec();
+        const BookList = await this.bookModel.aggregate(aggregateQuery).exec();
         if (BookList) {
             BookList[0].total_records =
                 BookList[0].total_records.length > 0

@@ -1,13 +1,5 @@
-import {
-  Controller,
-  Post,
-  Body,
-} from "@nestjs/common";
-import {
-  ApiBearerAuth,
-  ApiOperation,
-  ApiTags,
-} from "@nestjs/swagger";
+import { Controller, Post, Body } from "@nestjs/common";
+import { ApiBearerAuth, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { UsersService } from "./users.service";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { RESPONSE_SUCCESS } from "../common/constants/response.constant";

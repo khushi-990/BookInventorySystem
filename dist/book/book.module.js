@@ -22,7 +22,7 @@ exports.BookModule = BookModule = __decorate([
             mongoose_1.MongooseModule.forFeature([{ name: book_schema_1.Books.name, schema: book_schema_1.BooksSchema }]),
         ],
         controllers: [book_controller_1.BookController],
-        providers: [book_service_1.BookService, common_service_1.CommonService]
+        providers: [book_service_1.BookService, common_service_1.CommonService],
     })
 ], BookModule);
 //# sourceMappingURL=book.module.js.map

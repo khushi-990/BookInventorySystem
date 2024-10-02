@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import  { Document, Date } from "mongoose";
+import { Document, Date } from "mongoose";
 import { TABLE_NAMES } from "../../common/constants/table-name.constant";
 
 export type BooksDocument = Books & Document;
@@ -21,11 +21,11 @@ export class Books {
   @Prop({ required: true, default: false })
   isStock: boolean;
 
-  @Prop({type: Date})
-  createdAt: Date
+  @Prop({ type: Date })
+  createdAt: Date;
 
-  @Prop({type: Date})
-  updatedAt: Date
+  @Prop({ type: Date })
+  updatedAt: Date;
 }
 
 export const BooksSchema = SchemaFactory.createForClass(Books);

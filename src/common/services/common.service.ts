@@ -6,15 +6,21 @@ import { TypeExceptions } from "../helpers/exceptions";
 export class CommonService {
   constructor() {}
 
- /**
-  * The function `getDetails` retrieves details of a specific model by ID and throws a custom exception
-  * if the details are not found.
-  * @param model - The `model` parameter is the Mongoose model that you want to query for details.
-  * @param {string} id - The `id` parameter in the `getDetails` function is a string that represents
-  */
-  async getDetails<T>(model: Model<T>, id: string, notFoundMessage: string ): Promise<T> {
-    const details = await model.findOne({ _id: new mongoose.Types.ObjectId(id)});
-    
+  /**
+   * The function `getDetails` retrieves details of a specific model by ID and throws a custom exception
+   * if the details are not found.
+   * @param model - The `model` parameter is the Mongoose model that you want to query for details.
+   * @param {string} id - The `id` parameter in the `getDetails` function is a string that represents
+   */
+  async getDetails<T>(
+    model: Model<T>,
+    id: string,
+    notFoundMessage: string,
+  ): Promise<T> {
+    const details = await model.findOne({
+      _id: new mongoose.Types.ObjectId(id),
+    });
+
     if (!details) {
       throw TypeExceptions.NotFoundCommonFunction(notFoundMessage); // Use the dynamic message
     }
@@ -35,14 +41,17 @@ export class CommonService {
    * @returns The `deleteById` function returns a Promise that resolves to the deleted document of type
    * `T`.
    */
-  async deleteById<T>(model: Model<T>, id: string, notFoundMessage: string): Promise<T> {
+  async deleteById<T>(
+    model: Model<T>,
+    id: string,
+    notFoundMessage: string,
+  ): Promise<T> {
     const deletedDocument = await model.findOneAndDelete({ _id: id });
 
     if (!deletedDocument) {
-        throw TypeExceptions.NotFoundCommonFunction(notFoundMessage); // Use the dynamic message
+      throw TypeExceptions.NotFoundCommonFunction(notFoundMessage); // Use the dynamic message
     }
 
     return deletedDocument;
-}
-
+  }
 }

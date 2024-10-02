@@ -12,14 +12,14 @@ export class RolesGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
     const requiredRoles = this.reflector.getAllAndOverride<UserTypeEnum[]>(
       ROLES_KEYS,
-      [context.getHandler(), context.getClass()]
-      );
+      [context.getHandler(), context.getClass()],
+    );
     const isPublic = this.reflector.getAllAndOverride<boolean>(
       AUTH_IS_PUBLIC_KEY,
-      [context.getHandler(), context.getClass()]
+      [context.getHandler(), context.getClass()],
     );
     if (!requiredRoles) {
-        console.log('role is requires')
+      console.log("role is requires");
       return true;
     }
     if (isPublic) {

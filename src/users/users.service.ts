@@ -18,7 +18,7 @@ export class UsersService {
     @InjectModel(Users.name) private userModel: Model<UsersDocument>,
     private myLogger: LoggerService,
     private configService: ConfigService,
-    private encryptPasswordService: EncryptPasswordService
+    private encryptPasswordService: EncryptPasswordService,
   ) {
     // Due to transient scope, UsersService has its own unique instance of MyLogger,
     // so setting context here will not affect other instances in other services
@@ -32,10 +32,12 @@ export class UsersService {
         RESPONSE_ERROR.USER_ALREADY_EXIST,
       );
     }
-    const password = await this.encryptPasswordService.encryptPassword(createUserDto.password)
-    const gender = GenderEnum[createUserDto.gender]
-    console.log("🚀 ~ UsersService ~ create ~ gender:", gender)
-    return await this.userModel.create({ ...createUserDto, password,gender });
+    const password = await this.encryptPasswordService.encryptPassword(
+      createUserDto.password,
+    );
+    const gender = GenderEnum[createUserDto.gender];
+    console.log("🚀 ~ UsersService ~ create ~ gender:", gender);
+    return await this.userModel.create({ ...createUserDto, password, gender });
   }
 
   async createInitialUser(): Promise<void> {
@@ -81,7 +83,12 @@ export class UsersService {
       throw AuthExceptions.AccountNotActive();
     }
 
-    if (!await this.encryptPasswordService.comparePassword(params.password, user.password)) {
+    if (
+      !(await this.encryptPasswordService.comparePassword(
+        params.password,
+        user.password,
+      ))
+    ) {
       throw AuthExceptions.InvalidPassword();
     }
 

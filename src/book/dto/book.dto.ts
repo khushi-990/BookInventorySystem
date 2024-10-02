@@ -1,13 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
-import {
-  IsBoolean,
-  IsNotEmpty,
-  IsNumber,
-  IsString,
-} from "class-validator";
+import { IsBoolean, IsNotEmpty, IsNumber, IsString } from "class-validator";
 
 export class CreateBookDto {
-
   @ApiProperty()
   @IsNotEmpty()
   @IsString()

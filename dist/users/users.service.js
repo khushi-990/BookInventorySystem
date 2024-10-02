@@ -73,7 +73,7 @@ let UsersService = UsersService_1 = class UsersService {
         if (!user.isActive) {
             throw exceptions_1.AuthExceptions.AccountNotActive();
         }
-        if (!await this.encryptPasswordService.comparePassword(params.password, user.password)) {
+        if (!(await this.encryptPasswordService.comparePassword(params.password, user.password))) {
             throw exceptions_1.AuthExceptions.InvalidPassword();
         }
         delete user.password;

@@ -33,13 +33,13 @@ export class AuthService {
     const payload: JwtPayload = {
       _id: user._id,
       email: user.email,
-      userType: user.userType
+      userType: user.userType,
     };
     return this.jwtService.sign(payload);
   }
 
   async signUp(params: CreateUserDto) {
-    console.log("🚀 ~ AuthService ~ signUp ~ params:", params)
+    console.log("🚀 ~ AuthService ~ signUp ~ params:", params);
     const user = await this.userService.create(params);
     const accessToken = await this.generateAuthToken(user);
     user["accessToken"] = accessToken;

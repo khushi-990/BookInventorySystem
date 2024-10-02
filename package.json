@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-mongo-nest-js",
+  "name": "book-inventory-system-mongo-nest-js",
   "version": "0.0.1",
-  "description": "This Nest JS app is a boilerplate integrating MongoDB, featuring complete user authentication and full CRUD operations for user management.",
+  "description": "This Nest JS app is a book-inventory-system integrating MongoDB, featuring complete user authentication and full CRUD operations for book management.",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

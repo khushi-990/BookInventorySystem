@@ -14,13 +14,13 @@ export class HttpExceptionFilter implements ExceptionFilter {
   private readonly logger = new Logger(HttpExceptionFilter.name);
 
   catch(exception, host: ArgumentsHost) {
-    console.log("🚀 ~ HttpExceptionFilter ~ exception:", exception)
+    console.log("🚀 ~ HttpExceptionFilter ~ exception:", exception);
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
     // Custom error handling logic
     if (!exception?.response?.error) {
-      console.log("error",exception?.response?.error)
+      console.log("error", exception?.response?.error);
       exception = CustomError.UnknownError();
     }
 
@@ -66,4 +66,4 @@ export class HttpExceptionFilter implements ExceptionFilter {
       endpoint: url,
     };
   }
-} 
+}

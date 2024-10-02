@@ -15,7 +15,6 @@ export class Users {
 
   @Prop({ type: Number, enum: GenderEnum, required: true })
   gender: GenderEnum;
-  
 
   @Prop({ required: true, unique: true, index: true })
   email: string;
@@ -26,17 +25,22 @@ export class Users {
   @Prop({ required: true, default: false })
   isActive: boolean;
 
-  @Prop({required:false, default: []})
+  @Prop({ required: false, default: [] })
   progress: string[];
 
-  @Prop({required:true,type:Number, enum: UserTypeEnum, default: UserTypeEnum.Admin})
+  @Prop({
+    required: true,
+    type: Number,
+    enum: UserTypeEnum,
+    default: UserTypeEnum.Admin,
+  })
   userType: UserTypeEnum;
 
-  @Prop({type: Date})
-  createdAt: Date
+  @Prop({ type: Date })
+  createdAt: Date;
 
-  @Prop({type: Date})
-  updatedAt: Date
+  @Prop({ type: Date })
+  updatedAt: Date;
 }
 
 export const UsersSchema = SchemaFactory.createForClass(Users);

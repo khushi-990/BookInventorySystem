@@ -23,7 +23,6 @@ export const TypeExceptions = {
     );
   },
 
-
   InvalidFile(): HttpException {
     return new HttpException(
       {
@@ -34,5 +33,4 @@ export const TypeExceptions = {
       HttpStatus.BAD_REQUEST,
     );
   },
-
 };

@@ -16,7 +16,9 @@ const exceptions_1 = require("../helpers/exceptions");
 let CommonService = class CommonService {
     constructor() { }
     async getDetails(model, id, notFoundMessage) {
-        const details = await model.findOne({ _id: new mongoose_1.default.Types.ObjectId(id) });
+        const details = await model.findOne({
+            _id: new mongoose_1.default.Types.ObjectId(id),
+        });
         if (!details) {
             throw exceptions_1.TypeExceptions.NotFoundCommonFunction(notFoundMessage);
         }

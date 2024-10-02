@@ -13,7 +13,7 @@ import AppConfiguration from "./config/app.config";
 import DatabaseConfiguration from "./config/database.config";
 import AuthConfiguration from "./config/auth.config";
 import { RolesGuard } from "./security/auth/guards/role.guard";
-import { BookModule } from './book/book.module';
+import { BookModule } from "./book/book.module";
 
 @Module({
   imports: [

@@ -12,7 +12,7 @@ import { EncryptPasswordService } from "src/services/encrypt.service";
     LoggerModule,
   ],
   controllers: [UsersController],
-  providers: [UsersService,EncryptPasswordService],
+  providers: [UsersService, EncryptPasswordService],
   exports: [UsersService, EncryptPasswordService],
 })
 export class UsersModule implements OnModuleInit {
